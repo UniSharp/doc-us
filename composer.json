@@ -1,5 +1,7 @@
 {
     "name": "unisharp/schema-documentation",
+    "description": "A MySQL Schema Documantation Generator for Laravel",
+    "license": "MIT",
     "authors": [
         {
             "name": "UniSharp Ltd.",
