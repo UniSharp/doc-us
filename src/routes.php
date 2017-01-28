@@ -3,14 +3,12 @@
 Route::get('schema', function (Illuminate\Http\Request $request) {
     $schema = UniSharp\SchemaDocumentation\Parser::getSchema();
 
-    switch ($request->format) {
-        case 'markdown':
-            $format = 'markdown';
-            break;
+    $supportedFormats = array_map(function ($path) {
+        return head(explode('.', basename($path)));
+    }, Illuminate\Support\Facades\File::files(__DIR__ . '/views'));
 
-        default:
-            $format = 'html';
-            break;
+    if (!in_array($format = $request->format, $supportedFormats)) {
+        $format = 'html';
     }
 
     return response()->view("schema::{$format}", compact('schema'))
