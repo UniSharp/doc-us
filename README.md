@@ -1,11 +1,13 @@
-# A MySQL Schema Documantation Generator for Laravel
+# Doc Us
+
+A MySQL Schema Documantation Generator for Laravel
 
 ## Installation
 
 1. Require this package with composer:
 
 ```bash
-composer require unisharp/schema-documentation
+composer require unisharp/doc-us
 ```
 
 2. After updating composer, add the ServiceProvider to the providers array in `config/app.php`:
@@ -14,7 +16,7 @@ composer require unisharp/schema-documentation
 'providers' => [
     /* ... */
 
-    UniSharp\SchemaDocumentation\SchemaDocumentationServiceProvider::class,
+    UniSharp\DocUs\DocUsServiceProvider::class,
 
     /* ... */
 ];

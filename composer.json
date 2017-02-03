@@ -1,5 +1,5 @@
 {
-    "name": "unisharp/schema-documentation",
+    "name": "unisharp/doc-us",
     "description": "A MySQL Schema Documantation Generator for Laravel",
     "license": "MIT",
     "authors": [
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "UniSharp\\SchemaDocumentation\\": "src"
+            "UniSharp\\DocUs\\": "src"
         }
     },
     "require-dev": {
@@ -26,9 +26,6 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests"
-        },
-        "classmap": [
-            "tests/migrations"
-        ]
+        }
     }
 }

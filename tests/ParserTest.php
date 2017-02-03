@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Illuminate\Support\Facades\DB;
-use UniSharp\SchemaDocumentation\Parser;
+use UniSharp\DocUs\Parser;
 
 class ParserTest extends TestCase
 {

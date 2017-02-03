@@ -1,7 +1,7 @@
 <?php
 
 Route::get('schema', function (Illuminate\Http\Request $request) {
-    $schema = UniSharp\SchemaDocumentation\Parser::getSchema();
+    $schema = UniSharp\DocUs\Parser::getSchema();
 
     $supportedFormats = array_map(function ($path) {
         return head(explode('.', basename($path)));

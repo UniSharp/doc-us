@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\SchemaDocumentation;
+namespace UniSharp\DocUs;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
