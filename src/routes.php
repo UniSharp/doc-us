@@ -7,7 +7,7 @@ Route::get('schema', function (Illuminate\Http\Request $request) {
         return head(explode('.', basename($path)));
     }, Illuminate\Support\Facades\File::files(__DIR__ . '/views'));
 
-    if (!in_array($format = $request->format, $supportedFormats)) {
+    if (!in_array($format = strtolower($request->format), $supportedFormats)) {
         $format = 'html';
     }
 
