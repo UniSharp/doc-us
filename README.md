@@ -1,6 +1,6 @@
 # Doc Us
 
-A MySQL Schema Documantation Generator for Laravel
+A MySQL Schema Documantation Generator for Laravel.
 
 ## Installation
 
