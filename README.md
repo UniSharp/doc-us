@@ -40,9 +40,9 @@ Option (json format only)
 
 ## Demo
 
-![html](/uploads/upload_5c164aad2c6e98ac77d2307abb05f228.png)
-![markdown](/uploads/upload_60193479e7811a5e6a233a077ad8ead4.png)
-![json](/uploads/upload_c2af66704d856a1a4e2aae6ea50073ba.png)
+![html](http://i.imgur.com/EQaDRXMg.png)
+![markdown](http://i.imgur.com/21P0cR2g.png)
+![json](http://i.imgur.com/91VdFr0g.png)
 
 ## Test
 
