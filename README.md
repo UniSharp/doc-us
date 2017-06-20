@@ -26,23 +26,22 @@ composer require unisharp/doc-us
 
 ## Usage
 
-<http://{host}/schema?format={supported-format}&pretty={option}>
+<http://{host}/schema?format={supported-format}>
 
 Supported Formats
 
  - html
  - markdown
- - json (option)
-
-Option (json format only)
- - true
- - false
+ - json
 
 ## Demo
 
+#### HTML
 ![html](http://i.imgur.com/EQaDRXMg.png)
-![markdown](http://i.imgur.com/21P0cR2g.png)
-![json](http://i.imgur.com/91VdFr0g.png)
+#### Markdown
+![markdown](http://i.imgur.com/kt92Uflg.png)
+#### Json
+![json](http://i.imgur.com/VCzAw3Qg.png)
 
 ## Test
 
