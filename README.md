@@ -23,6 +23,11 @@ composer require unisharp/doc-us
     /* ... */
 ];
 ```
+3. Add DOC_US_ENABLE in .env (Default is disable)
+
+```
+DOC_US_ENABLE=true
+```
 
 ## Usage
 
