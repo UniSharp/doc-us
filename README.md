@@ -52,4 +52,4 @@ Option (json format only)
 
 ## License
 
-The DocUs released under [MIT license](https://github.com/UniSharp/doc-us/blob/master/LICENSE.md).
+The DocUs released under [MIT license](https://unisharp.mit-license.org/).
