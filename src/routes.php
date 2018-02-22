@@ -1,5 +1,5 @@
 <?php
-if (env('DOC_US_ENABLE', false)) {
+if (env('ENABLE_DOC_US', false)) {
     Route::get('schema', function (Illuminate\Http\Request $request) {
         $schema = UniSharp\DocUs\Parser::getSchema();
 

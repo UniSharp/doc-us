@@ -14,10 +14,10 @@ A MySQL Schema Documantation Generator for Laravel.
 composer require unisharp/doc-us
 ```
 
-2. Add `DOC_US_ENABLE` in `.env` (Default is disable)
+2. Add `ENABLE_DOC_US` in `.env` (Default is disable)
 
 ```
-DOC_US_ENABLE=true
+ENABLE_DOC_US=true
 ```
 
 3. Add the ServiceProvider to the providers array in `config/app.php`:
