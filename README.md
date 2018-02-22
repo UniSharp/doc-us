@@ -14,7 +14,7 @@ A MySQL Schema Documantation Generator for Laravel.
 composer require unisharp/doc-us
 ```
 
-2. Add DOC_US_ENABLE in .env (Default is disable)
+2. Add `DOC_US_ENABLE` in `.env` (Default is disable)
 
 ```
 DOC_US_ENABLE=true
