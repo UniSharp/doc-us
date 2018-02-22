@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Illuminate\Support\Facades\DB;
 use UniSharp\DocUs\Parser;
+use Illuminate\Support\Facades\DB;
 
 class ParserTest extends TestCase
 {

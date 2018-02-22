@@ -1,4 +1,6 @@
-[![Latest Stable Version](https://poser.pugx.org/unisharp/doc-us/v/stable)](https://packagist.org/packages/unisharp/doc-us) [![Total Downloads](https://poser.pugx.org/unisharp/doc-us/downloads)](https://packagist.org/packages/unisharp/doc-us) [![License](https://poser.pugx.org/unisharp/doc-us/license)](https://packagist.org/packages/unisharp/doc-us)
+[![Latest Stable Version](https://poser.pugx.org/unisharp/doc-us/v/stable)](https://packagist.org/packages/unisharp/doc-us)
+[![Total Downloads](https://poser.pugx.org/unisharp/doc-us/downloads)](https://packagist.org/packages/unisharp/doc-us)
+[![License](https://poser.pugx.org/unisharp/doc-us/license)](https://packagist.org/packages/unisharp/doc-us)
 
 # Doc Us
 
@@ -12,7 +14,15 @@ A MySQL Schema Documantation Generator for Laravel.
 composer require unisharp/doc-us
 ```
 
-2. After updating composer, add the ServiceProvider to the providers array in `config/app.php`:
+2. Add DOC_US_ENABLE in .env (Default is disable)
+
+```
+DOC_US_ENABLE=true
+```
+
+3. Add the ServiceProvider to the providers array in `config/app.php`:
+
+> If you are using Laravel 5.5 or newer, you don’t need to do this step.
 
 ```php
 'providers' => [
@@ -23,11 +33,6 @@ composer require unisharp/doc-us
     /* ... */
 ];
 ```
-3. Add DOC_US_ENABLE in .env (Default is disable)
-
-```
-DOC_US_ENABLE=true
-```
 
 ## Usage
 
@@ -35,23 +40,28 @@ DOC_US_ENABLE=true
 
 Supported Formats
 
- - html
- - markdown
- - json
+- html
+- markdown
+- json
 
 ## Demo
 
 #### HTML
+
 ![html](http://i.imgur.com/EQaDRXMg.png)
+
 #### Markdown
+
 ![markdown](http://i.imgur.com/kt92Uflg.png)
+
 #### Json
+
 ![json](http://i.imgur.com/VCzAw3Qg.png)
 
 ## Test
 
 ```
-./vendor/bin/phpunit tests
+vendor/bin/phpunit tests
 ```
 
 ## License
