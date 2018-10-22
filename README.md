@@ -4,7 +4,7 @@
 
 # Doc Us
 
-A MySQL Schema Documantation Generator for Laravel.
+A MySQL Schema Documentation Generator for Laravel.
 
 ## Installation
 
