@@ -155,19 +155,24 @@ class ParserTest extends TestCase
             )"
         );
 
+        DB::statement(
+            "CREATE TABLE `should_on_result` (
+                `tests` VARCHAR(1)
+            )"
+        );
+
         $exclude = ['tests'];
+        $expect = ['should_on_result'];
 
         $schema = Parser::getSchema($exclude);
         $tables = $schema->map(function ($table) {
             return $table['name'];
-        });
+        })->toArray();
 
-        $excludeTablesOnResult = $tables->filter(function ($table) use ($exclude) {
-            return in_array($table, $exclude);
-        });
-
-        $this->assertEquals(0, count($excludeTablesOnResult));
+        $this->assertEquals($expect, $tables);
 
         DB::statement('DROP TABLE `tests`');
+
+        DB::statement('DROP TABLE `should_on_result`');
     }
 }
