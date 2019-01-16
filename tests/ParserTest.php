@@ -146,4 +146,28 @@ class ParserTest extends TestCase
 
         DB::statement('DROP TABLE `tests`');
     }
+
+    public function testExcludeTable()
+    {
+        DB::statement(
+            "CREATE TABLE `tests` (
+                `tests` VARCHAR(1)
+            )"
+        );
+
+        $exclude = ['tests'];
+
+        $schema = Parser::getSchema($exclude);
+        $tables = $schema->map(function ($table) {
+            return $table['name'];
+        });
+
+        $excludeTablesOnResult = $tables->filter(function ($table) use ($exclude) {
+            return in_array($table, $exclude);
+        });
+
+        $this->assertEquals(0, count($excludeTablesOnResult));
+
+        DB::statement('DROP TABLE `tests`');
+    }
 }
