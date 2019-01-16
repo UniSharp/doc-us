@@ -36,6 +36,8 @@ ENABLE_DOC_US=true
 
 ## Usage
 
+### Output format
+
 <http://{host}/schema?format={supported-format}>
 
 Supported Formats
@@ -43,6 +45,16 @@ Supported Formats
 - html
 - markdown
 - json
+
+### exclude special table
+
+<http://{host}/schema?exclude={special-table}>
+
+Using comma to separate multiple table.
+
+like
+
+<http://{host}/schema?exclude={table1},{table2}>
 
 ## Demo
 
