@@ -7,17 +7,21 @@ use Illuminate\Support\Facades\DB;
 
 class Parser
 {
-    public static function getSchema()
+    public static function getSchema($exclude = [])
     {
-        return collect(DB::select('show tables'))->map(function ($row) {
-            $table = head($row);
+        return collect(DB::select('show tables'))
+            ->filter(function ($row) use ($exclude) {
+                return !in_array(head($row), $exclude);
+            })
+            ->map(function ($row) {
+                $table = head($row);
 
-            return [
-                'name' => $table,
-                'columns' => static::getColumns($table),
-                'indices' => static::getIndices($table),
-            ];
-        });
+                return [
+                    'name'    => $table,
+                    'columns' => static::getColumns($table),
+                    'indices' => static::getIndices($table),
+                ];
+            });
     }
 
     protected static function getColumns($table)
