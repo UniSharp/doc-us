@@ -9,19 +9,17 @@ class Parser
 {
     public static function getSchema($exclude = [])
     {
-        return collect(DB::select('show tables'))
-            ->filter(function ($row) use ($exclude) {
-                return !in_array(head($row), $exclude);
-            })
-            ->map(function ($row) {
-                $table = head($row);
-
-                return [
-                    'name'    => $table,
-                    'columns' => static::getColumns($table),
-                    'indices' => static::getIndices($table),
-                ];
-            });
+        return collect(DB::select('show tables'))->map(function ($row) {
+            return head($row);
+        })->filter(function ($table) use ($exclude) {
+            return !in_array($table, $exclude);
+        })->map(function ($table) {
+            return [
+                'name' => $table,
+                'columns' => static::getColumns($table),
+                'indices' => static::getIndices($table),
+            ];
+        });
     }
 
     protected static function getColumns($table)
