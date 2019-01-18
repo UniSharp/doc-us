@@ -147,7 +147,7 @@ class ParserTest extends TestCase
         DB::statement('DROP TABLE `tests`');
     }
 
-    public function testExcludeTable()
+    public function testExcludeSingleTable()
     {
         DB::statement(
             "CREATE TABLE `tests` (
@@ -165,9 +165,7 @@ class ParserTest extends TestCase
         $expect = ['should_on_result'];
 
         $schema = Parser::getSchema($exclude);
-        $tables = $schema->map(function ($table) {
-            return $table['name'];
-        })->toArray();
+        $tables = $schema->pluck('name')->toArray();
 
         $this->assertEquals($expect, $tables);
 
@@ -175,4 +173,32 @@ class ParserTest extends TestCase
 
         DB::statement('DROP TABLE `should_on_result`');
     }
+
+    public function testExcludeMultipleTable()
+    {
+        DB::statement(
+            "CREATE TABLE `tests1` (
+                `tests` VARCHAR(1)
+            )"
+        );
+
+        DB::statement(
+            "CREATE TABLE `tests2` (
+                `tests` VARCHAR(1)
+            )"
+        );
+
+        $exclude = ['tests1', 'tests2'];
+        $expect = [];
+
+        $schema = Parser::getSchema($exclude);
+        $tables = $schema->pluck('name')->toArray();
+
+        $this->assertEquals($expect, $tables);
+
+        DB::statement('DROP TABLE `tests1`');
+
+        DB::statement('DROP TABLE `tests2`');
+    }
+
 }
