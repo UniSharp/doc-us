@@ -4,7 +4,7 @@ if (env('ENABLE_DOC_US', false)) {
         $exclude = [];
 
         if ($request->exclude !== null) {
-            $exclude = explode(',', strtolower($request->exclude));
+            $exclude = explode(',', $request->exclude);
         }
 
         $schema = UniSharp\DocUs\Parser::getSchema($exclude);
