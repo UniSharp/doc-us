@@ -1,7 +1,13 @@
 <?php
 if (env('ENABLE_DOC_US', false)) {
     Route::get('schema', function (Illuminate\Http\Request $request) {
-        $schema = UniSharp\DocUs\Parser::getSchema();
+        $exclude = [];
+
+        if ($request->exclude !== null) {
+            $exclude = explode(',', $request->exclude);
+        }
+
+        $schema = UniSharp\DocUs\Parser::getSchema($exclude);
 
         $supportedFormats = array_map(function ($path) {
             return head(explode('.', basename($path)));

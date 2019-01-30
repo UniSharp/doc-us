@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class Parser
 {
-    public static function getSchema()
+    public static function getSchema($exclude = [])
     {
         return collect(DB::select('show tables'))->map(function ($row) {
-            $table = head($row);
-
+            return head($row);
+        })->filter(function ($table) use ($exclude) {
+            return !in_array($table, $exclude);
+        })->map(function ($table) {
             return [
                 'name' => $table,
                 'columns' => static::getColumns($table),
